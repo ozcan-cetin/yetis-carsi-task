@@ -1,12 +1,9 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { randomUserData } from "../constant/randomUsers";
 import { randomCoordinates } from "../constant/coordinates";
 
-// Context oluşturma
 const GlobalContext = createContext();
 
-// Context Provider bileşeni oluşturma
 export const GlobalContextProvider = ({ children }) => {
   const defaultLocation = {
     lat: 41.0145,
@@ -16,6 +13,7 @@ export const GlobalContextProvider = ({ children }) => {
   const [stockStatus, setStockStatus] = useState(10);
   const [startDelivery, setStartDelivery] = useState(false);
   const [companyLocation, setCompanyLocation] = useState(defaultLocation);
+  const [currentLocation, setCurrentLocation] = useState(null);
   const [users, setUsers] = useState([]);
   const [userLocations, setUserLocations] = useState([]);
   const [showMessage, setShowMessage] = useState(false);
@@ -32,7 +30,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   useEffect(() => {
     getLocations();
-    const timerId = setTimeout(getLocations, 3000);
+    const timerId = setTimeout(getLocations, 1000);
 
     return () => clearTimeout(timerId);
   }, []);
@@ -70,7 +68,6 @@ export const GlobalContextProvider = ({ children }) => {
         },
       };
     });
-    // return shuffledUsers;
     return setUsers(shuffledUsers);
   };
   useEffect(() => {
@@ -89,7 +86,6 @@ export const GlobalContextProvider = ({ children }) => {
         });
     }
   }, [companyIp]);
-
   return (
     <GlobalContext.Provider
       value={{
@@ -102,6 +98,8 @@ export const GlobalContextProvider = ({ children }) => {
         setStartDelivery,
         showMessage,
         setShowMessage,
+        currentLocation,
+        setCurrentLocation,
       }}
     >
       {children}
@@ -109,7 +107,6 @@ export const GlobalContextProvider = ({ children }) => {
   );
 };
 
-// useContext hook'unu kullanarak context'e erişme
 export const useGlobalContext = () => {
   return useContext(GlobalContext);
 };
