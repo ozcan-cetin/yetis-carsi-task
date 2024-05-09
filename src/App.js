@@ -12,10 +12,10 @@ const App = () => {
         <div className='bg-slate-500 min-h-[100vh] mx-auto px-1 lg:px-[80px] py-5'>
             <h1 className='text-center font-bold text-[white] py-3'>PACKAGE DELIVERY APP</h1>
             <div className="flex justify-between gap-3 my-2">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex justify-center" onClick={()=>setStartDelivery(true)}>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 lg:px-4 rounded flex justify-center" onClick={()=>setStartDelivery(true)}>
           Start Delivery
         </button>
-        <div class="flex items-center border border-[blue] p-3 rounded-lg text-yellow-500">
+        <div class="flex items-center border border-[blue] p-1 lg:p-3 rounded-lg text-yellow-500">
           <div class="w-4 h-4 rounded-full mr-2 bg-green-500"></div>
           {stockStatus > 0 ? (
             <p class="text-sm font-bold">In Stock ({stockStatus} items)</p>
