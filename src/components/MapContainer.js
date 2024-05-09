@@ -112,12 +112,12 @@ const MapContainer = () => {
           index > routeIndex ?
           <Marker key={index} position={step.start_location} icon={stepIcon} /> : <Marker key={index} position={step.start_location} icon={stepRedIcon} />
         ))}
-        {directions &&
+        {/* {directions &&
   directions.routes[0].legs.slice(1).map((leg, legIndex) => (
     leg.steps.map((step, stepIndex) => (
       <Marker key={stepIndex} position={step.start_location} icon={stepIcon} />
     ))
-  ))}
+  ))} */}
       {carPosition && <Marker position={carPosition} icon={carIcon} />}
       {(!startDelivery && directions) && <Marker position={companyLocation} icon={carIcon} />}
     </GoogleMap>
