@@ -31,9 +31,7 @@ const UserList = () => {
   localStorage.setItem("userLocations", JSON.stringify(usersWithCoordinates));
   return (
     <div>
-      <div className="flex items-center justify-between px-5 my-3">
-        <div className="font-bold">CUSTOMERS</div>
-      </div>
+        <div className="font-bold text-center lg:text-start py-3">CUSTOMERS</div>
       <div className="flex flex-col gap-2">
         {sortedUsers.map((user) => (
           <User

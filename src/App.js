@@ -9,9 +9,9 @@ const App = () => {
   return (
           <>
           {showMessage && <Notification/>}
-        <div className='bg-zinc-600 min-h-[100vh] mx-auto px-1 lg:px-[80px] py-5'>
+        <div className='bg-slate-500 min-h-[100vh] mx-auto px-1 lg:px-[80px] py-5'>
             <h1 className='text-center font-bold text-[white] py-3'>PACKAGE DELIVERY APP</h1>
-            <div className="flex justify-between gap-3">
+            <div className="flex justify-between gap-3 my-2">
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex justify-center" onClick={()=>setStartDelivery(true)}>
           Start Delivery
         </button>
