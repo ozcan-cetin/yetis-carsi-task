@@ -14,7 +14,3 @@ export function calculateDistance(lat1, lon1, lat2, lon2) {
 function deg2rad(deg) {
     return deg * (Math.PI / 180);
 }
-
-// Kullanım örneği
-// const distance = calculateDistance(39.8959, 32.863, 41.0145, 28.9533);
-// console.log("Mesafe:", distance.toFixed(2), "km");
