@@ -5,7 +5,7 @@ export async function reverseGeocode(latitude, longitude) {
       const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
         params: {
           latlng: `${latitude},${longitude}`,
-          key: 'AIzaSyBhXNUfNnhDrQrd-JKBGL4CLu1vOByaJWs'
+          key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
         }
       });
   
